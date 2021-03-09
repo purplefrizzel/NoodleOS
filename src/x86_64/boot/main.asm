@@ -125,7 +125,7 @@ page_table_l2:
     resb 4096
 
 stack_bottom:
-    resb 4096 * 4
+    resb 4096 * 4 ; 16 KiB
 stack_top:
 
 section .rodata

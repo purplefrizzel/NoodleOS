@@ -27,3 +27,4 @@ void printClear();
 void printChar(char characater);
 void printStr(char *string);
 void printSetColor(uint8_t foreground, uint8_t background);
+void printLogo();

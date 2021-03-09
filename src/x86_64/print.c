@@ -97,3 +97,21 @@ void printSetColor(uint8_t foreground, uint8_t background)
 {
     color = foreground + (background << 4);
 }
+
+void printLogo()
+{
+    printSetColor(PRINT_COLOR_WHITE, PRINT_COLOR_BLACK);
+
+    char *logo = R"(
+     _   _                 _ _       ____   _____ 
+    | \ | |               | | |     / __ \ / ____|
+    |  \| | ___   ___   __| | | ___| |  | | (___  
+    | . ` |/ _ \ / _ \ / _` | |/ _ \ |  | |\___ \ 
+    | |\  | (_) | (_) | (_| | |  __/ |__| |____) |
+    |_| \_|\___/ \___/ \__,_|_|\___|\____/|_____/ 
+    )";
+
+    printNewLine();
+
+    printStr(logo);
+}
