@@ -1,0 +1,6 @@
+targets/x86_64/iso/boot/kernel.bin
+
+dist/
+build/
+
+.vscode/
