@@ -54,7 +54,7 @@ void printNewLine()
         }
     }
 
-    clearRow(NUM_COLS - 1);
+    clearRow(NUM_ROWS - 1);
 }
 
 void printChar(char character)
