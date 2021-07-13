@@ -3,6 +3,13 @@ name = "noodleos"
 version = "0.1.0"
 edition = "2018"
 authors = ["Purplefrizzel"]
+documentation = "https://noodleos.purplefrizzel.com/docs"
+exclude = ["/docs/*"]
+keywords = ["NoodleOS", "os", "operating-system"]
+license = "Apache 2.0"
+readme = "README.md"
+repository = "https://github.com/purplefrizzel/NoodleOS"
+description = "A 64-bit operating system."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
