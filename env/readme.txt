@@ -1,1 +1,0 @@
-Windows: docker run --rm -it -v %cd%:/root/env noodleos-builder
