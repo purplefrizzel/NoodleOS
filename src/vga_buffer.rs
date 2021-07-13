@@ -1,4 +1,6 @@
 use core::fmt;
+use lazy_static::lazy_static;
+use spin::Mutex;
 use volatile::Volatile;
 
 #[allow(dead_code)]
@@ -102,7 +104,7 @@ impl Writer {
             color_code: self.color_code,
         };
         for col in 0..BUFFER_WIDTH {
-            // todo
+            self.buffer.chars[row][col].write(blank);
         }
     }
 }
@@ -114,17 +116,10 @@ impl fmt::Write for Writer {
     }
 }
 
-pub fn print_string() {
-    use core::fmt::Write;
-
-    let mut writer = Writer {
+lazy_static! {
+    pub static ref WRITER: Mutex<Writer> = Mutex::new(Writer {
         column_position: 0,
-        color_code: ColorCode::new(Color::Magenta, Color::Black),
+        color_code: ColorCode::new(Color::Pink, Color::Black),
         buffer: unsafe { &mut *(0xb8000 as *mut Buffer) },
-    };
-
-    writer.write_byte(b'H');
-    writer.write_string("ello ");
-    writer.write_string("Wörld!");
-    write!(writer, "The numbers are {} and {}", 42, 1.0 / 3.0).unwrap();
+    });
 }
